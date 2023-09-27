@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template
 from main import pick_random_number
+from llm import run_llm
 
 app = Flask(__name__)
 
@@ -14,7 +15,8 @@ def homepage():
 @app.route("/html-test")
 def html_test():
     number = pick_random_number()
-    return render_template('html-test.html', number=number)
+    llm_answer = run_llm("fire")
+    return render_template('html-test.html', number=number, llm_answer=llm_answer)
 
 
 if __name__ == "__main__":

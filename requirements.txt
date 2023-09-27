@@ -1,2 +1,4 @@
 Flask
 Gunicorn
+langchain
+huggingface_hub
