@@ -21,7 +21,7 @@ llm_chain = LLMChain(prompt=prompt,
 
 
 def run_llm(user_input):
-    llm_answer = llm_chain.run(user_input=user_input)
+    llm_answer = llm_chain.run(user_input)
     return llm_answer
 
 
