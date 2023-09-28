@@ -15,7 +15,7 @@ def homepage():
 @app.route("/html-test")
 def html_test():
     number = pick_random_number()
-    llm_answer = run_llm()
+    llm_answer = run_llm("water")
     return render_template('html-test.html', number=number, llm_answer=llm_answer)
 
 

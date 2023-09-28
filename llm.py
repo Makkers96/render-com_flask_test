@@ -41,9 +41,11 @@ for m in models:
 
 model = models[0].name
 
-prompt = """What is the opposite of the following word? Answer with only the opposite word.
+word_to_opposite = None
 
-fire
+prompt = f"""What is the opposite of the following word? Answer with only the opposite word.
+
+{word_to_opposite}
 
 Answer: The opposite is: """
 
@@ -55,6 +57,7 @@ completion = palm.generate_text(
 )
 
 
-def run_llm():
+def run_llm(user_input):
+    user_input = word_to_opposite
     result = completion.result
     return result
