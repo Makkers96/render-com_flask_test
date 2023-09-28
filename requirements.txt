@@ -1,3 +1,4 @@
 Flask
 Gunicorn
-google-generativeai
+langchain
+huggingface_hub
