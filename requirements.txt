@@ -1,5 +1,4 @@
 Flask
 Gunicorn
-pydantic==1.10.9
-langchain
-huggingface_hub
+google-api-python-client
+google-generativeai
