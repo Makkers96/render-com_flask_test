@@ -41,23 +41,24 @@ for m in models:
 
 model = models[0].name
 
-word_to_opposite = None
 
-prompt = f"""What is the opposite of the following word? Answer with only the opposite word.
-
-{word_to_opposite}
-
-Answer: The opposite is: """
-
-completion = palm.generate_text(
-    model=model,
-    prompt=prompt,
-    temperature=0.2,
-    max_output_tokens=32,
-)
+player_word = None
+npc_word = None
 
 
-def run_llm(user_input):
-    user_input = word_to_opposite
+def run_llm(player_word, npc_word):
+    prompt = f"""Two words are going to fight. Which of the following words wins?
+    
+    {player_word} VS {npc_word}
+    
+    Answer: The word that would win is: """
+
+    completion = palm.generate_text(
+        model=model,
+        prompt=prompt,
+        temperature=0,
+        max_output_tokens=32,
+    )
+
     result = completion.result
     return result
